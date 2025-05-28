@@ -24,7 +24,7 @@
 
     - name: checking the directory
       ansible.builtin.stat:
-      path: /app
+        path: /app
       register: dir_status
 
     - name: create /app directory
