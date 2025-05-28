@@ -61,7 +61,7 @@
 
     - name: Install mysql
       ansible.builtin.yum:
-        name: mysqld
+        name: mysql-server
         state: installed
 
     - name: load backend data into mysql
