@@ -65,7 +65,7 @@
         state: installed
 
     - name: load backend data into mysql
-      ansible.builtin.command: mysql -h 172.31.93.168 -uroot -pExpenseApp@1 < /app/schema/backend.sql 
+      ansible.builtin.shell: mysql -h 172.31.93.168 -uroot -pExpenseApp@1 < /app/schema/backend.sql 
 
     - name: start and enable the nodejs
       ansible.builtin.service:
