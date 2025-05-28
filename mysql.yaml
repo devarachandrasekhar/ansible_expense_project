@@ -1,0 +1,19 @@
+- name: install mysql
+  hosts: mysql
+  become: yes
+
+  tasks:
+  - name: install mysql
+    ansible.builtin.yum:
+      name: mysql-server
+      state: installed
+
+  - name: start and enable mysql
+    ansible.builtin.service:
+      name: mysql-server
+      state: started
+      enable: true
+
+  - name:   change default root password in      
+    ansible.builtin.shell: mysql_secure_installation --set-root-pass ExpenseApp@1
+   
